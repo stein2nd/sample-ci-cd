@@ -14,10 +14,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -48,19 +48,19 @@ jobs:
           upload_artifact: false
 
       - name: Upload ZAP HTML Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: zap-report-html
           path: report_html.html
 
       - name: Upload ZAP MD Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: zap-report-md
           path: report_md.md
 
       - name: Upload ZAP JSON Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: zap-report-json
           path: report_json.json
