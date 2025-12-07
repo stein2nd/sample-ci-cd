@@ -1,5 +1,5 @@
 {
-  "name": "sample-ci-cd-zap-sonar",
+  "name": "sample-ci-cd",
   "version": "1.0.0",
   "scripts": {
     "start": "node src/app.js",
