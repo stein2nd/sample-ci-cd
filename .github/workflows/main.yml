@@ -47,7 +47,7 @@ jobs:
           target: "http://172.17.0.1:3000"
           fail_action: false
           allow_issue_writing: true
-          upload_artifact: true
+          upload_artifact: false
           artifact_name: zapscan
 
       - name: Upload ZAP HTML Report
