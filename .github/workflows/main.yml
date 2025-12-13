@@ -5,11 +5,12 @@ permissions:
   issues: write
   pull-requests: write
   actions: write
-
+  
 on:
   push:
     branches: [ main ]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
