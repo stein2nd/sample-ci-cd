@@ -5,7 +5,7 @@ permissions:
   issues: write
   pull-requests: write
   actions: write
-  
+
 on:
   push:
     branches: [ main ]
@@ -48,4 +48,12 @@ jobs:
         continue-on-error: true
         with:
           target: "http://localhost:3000"
-        
+
+      - name: Upload ZAP Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: |
+            report_html.html
+            report_md.md
+            report_json.json
