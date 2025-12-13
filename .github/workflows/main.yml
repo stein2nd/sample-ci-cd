@@ -47,8 +47,10 @@ jobs:
         with:
           target: "http://172.17.0.1:3000"
           fail_action: false
-          allow_issue_writing: true
-          # artifact_name は指定しない！
+          allow_issue_writing: false
+          token: ""   # ← ★これが超重要（内部 artifact upload 無効化）
+
+      # ↓↓↓ ここからは自分で artifact 管理 ↓↓↓
 
       - name: Upload ZAP HTML Report
         uses: actions/upload-artifact@v4
