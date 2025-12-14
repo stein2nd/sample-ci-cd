@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample CI/CD - GitHub Pages</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+        .input-group {
+            margin: 30px 0;
+        }
+        input {
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            min-height: 50px;
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Sample CI/CD Demo</h1>
+        <p>このページはGitHub Pagesにデプロイされています。</p>
+        
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="名前を入力してください" value="World">
+            <button onclick="greet()">挨拶</button>
+        </div>
+        
+        <div class="result" id="result">
+            <h2>Hello, World!</h2>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ XSS注意:</strong> このページはZAPスキャンのデモ用です。実際のプロダクションでは、ユーザー入力を適切にサニタイズしてください。
+        </div>
+    </div>
+
+    <script>
+        function greet() {
+            const name = document.getElementById('nameInput').value || 'World';
+            const resultDiv = document.getElementById('result');
+            // ⚠️ XSS脆弱性を含むサンプル（ZAPが検知）
+            resultDiv.innerHTML = `<h2>Hello, ${name}!</h2>`;
+        }
+        
+        // Enterキーで実行
+        document.getElementById('nameInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                greet();
+            }
+        });
+    </script>
+</body>
+</html>
+
