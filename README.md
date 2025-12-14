@@ -21,9 +21,14 @@
 
 ## 🔍 ZAPスキャン
 
-- デプロイ後のURL: `https://xxxx.github.io/sample-ci-cd-zap-sonar/`
+- デプロイ後のURL: `https://stein2nd.github.io/sample-ci-cd/`
 - Actionsのzapジョブで自動スキャンされます
 - スキャンレポートはログに出力されます
+
+## 📦 GitHub Pages
+
+- デプロイされたサイト: `https://stein2nd.github.io/sample-ci-cd/`
+- `main` ブランチにpushすると自動的にデプロイされます
 
 ---
 
